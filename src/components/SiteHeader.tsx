@@ -21,7 +21,7 @@ const SiteHeader = () => {
 
         <a
           href="#get-terms"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm border border-foreground/10 hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors"
         >
           Get Terms →
         </a>

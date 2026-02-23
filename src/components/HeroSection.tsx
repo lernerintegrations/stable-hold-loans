@@ -52,7 +52,7 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-5 flex flex-wrap gap-3 items-center">
-            <a href="#get-terms" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm border border-foreground/10 hover:opacity-90 transition-opacity">
+            <a href="#get-terms" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors">
               Request Rental Loan Terms →
             </a>
             <a href="#why-this" className="text-sm font-medium text-muted-foreground border-b border-dashed border-foreground/20 hover:text-foreground hover:border-foreground/35 transition-colors pb-0.5">
@@ -96,7 +96,7 @@ const HeroSection = () => {
 
             <button
               type="submit"
-              className="w-full mt-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm border border-foreground/10 hover:opacity-90 transition-opacity"
+              className="w-full mt-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors"
             >
               Request Rental Loan Terms →
             </button>

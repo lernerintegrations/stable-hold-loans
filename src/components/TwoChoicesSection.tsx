@@ -35,7 +35,7 @@ const TwoChoicesSection = () => {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3 items-center justify-center">
-          <a href="#get-terms" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-sm border border-foreground/10 hover:opacity-90 transition-opacity">
+          <a href="#get-terms" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors">
             Request Rental Loan Terms →
           </a>
           <a href="#how-it-works" className="text-sm font-medium text-muted-foreground border-b border-dashed border-foreground/20 hover:text-foreground transition-colors pb-0.5">

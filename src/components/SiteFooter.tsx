@@ -1,17 +1,19 @@
 const SiteFooter = () => {
   return (
-    <footer className="border-t border-foreground/6 bg-background/35 backdrop-blur-xl">
-      <div className="container py-10">
-        <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
+    <footer className="border-t border-border/40 bg-background/60 backdrop-blur-xl">
+      <div className="container py-12">
+        <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
           <div>
-            <div className="flex items-center gap-2.5 font-semibold mb-3">
-              <div className="w-7 h-7 rounded-[10px] bg-gradient-to-br from-primary to-secondary shadow-lg border border-foreground/10" />
+            <div className="flex items-center gap-2.5 font-bold text-lg mb-4">
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground text-xs font-black">IR</span>
+              </div>
               <span>Investor Rental Loans</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
               30-Year Fixed Rental Loans — built for investors. Designed to scale.
             </p>
-            <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">
+            <p className="mt-3 text-xs text-muted-foreground/50 max-w-md leading-relaxed">
               Not for owner-occupied homes. Terms and eligibility vary. This page is a starter template—update disclosures to match your business and state requirements.
             </p>
           </div>
@@ -22,13 +24,13 @@ const SiteFooter = () => {
                 <a
                   key={l}
                   href={l === "Contact" ? "mailto:hello@yourdomain.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="px-2.5 py-2 rounded-xl bg-foreground/3 border border-foreground/6 hover:bg-foreground/5 hover:border-foreground/10 transition-colors"
+                  className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors"
                 >
                   {l}
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-xs text-muted-foreground/50">
+            <p className="mt-5 text-xs text-muted-foreground/40">
               © {new Date().getFullYear()} Your Company Name. All rights reserved.
             </p>
           </div>

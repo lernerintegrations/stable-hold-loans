@@ -16,63 +16,58 @@ const HeroSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // placeholder
   };
 
   return (
-    <section id="get-terms" className="container pt-12 pb-10">
-      <div className="mb-8">
-        <span className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-foreground/10 bg-foreground/5 backdrop-blur-lg text-muted-foreground text-[13px]">
-          <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-foreground/90 to-foreground/20 border border-primary/30 shadow-[0_0_0_3px_hsla(148,42%,72%,0.1)]" />
-          30-year amortized • fixed rate • built for investors
-        </span>
+    <section id="get-terms" className="container pt-20 pb-16">
+      {/* Centered hero headline */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight">
+          30-Year Fixed Rental Loans — Built for Real Estate Investors
+        </h1>
+        <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
+          Stop using short-term or retail bank financing for long-term rental properties.
+          Lock in stable, predictable debt designed for portfolio growth.
+        </p>
       </div>
 
-      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 items-stretch">
-        {/* Left */}
-        <div className="glass p-7 flex flex-col">
-          <h1 className="text-3xl sm:text-4xl lg:text-[clamp(34px,5vw,54px)] font-bold leading-[1.05] tracking-tight">
-            30-Year Fixed Rental Loans — Built for Real Estate Investors
-          </h1>
-
-          <div className="mt-5 space-y-1 text-muted-foreground">
-            <p>Stop using short-term or retail bank financing for long-term rental properties.</p>
-            <p>Lock in stable, predictable debt designed for portfolio growth.</p>
-          </div>
-
-          <div className="mt-5 grid gap-2.5">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start">
+        {/* Left – Bullets */}
+        <div className="glass p-8">
+          <h2 className="text-xl font-bold mb-6">Why Investors Choose Us</h2>
+          <div className="grid gap-3">
             {bullets.map((b) => (
-              <div key={b} className="flex gap-2.5 items-start px-3 py-2.5 rounded-lg border border-foreground/8 bg-foreground/4 text-sm text-foreground/85">
-                <span className="w-[18px] h-[18px] rounded-md bg-primary/20 border border-primary/30 flex items-center justify-center mt-0.5 shrink-0">
-                  <Check className="w-3 h-3 text-foreground" />
+              <div key={b} className="flex gap-3 items-start p-3 rounded-lg border border-primary/10 bg-primary/5 text-sm text-foreground/90">
+                <span className="w-5 h-5 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mt-0.5 shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
                 </span>
                 <span>{b}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-3 items-center">
-            <a href="#get-terms" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors">
+          <div className="mt-6 flex flex-wrap gap-3 items-center">
+            <a href="#get-terms" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors">
               Request Rental Loan Terms →
             </a>
-            <a href="#why-this" className="text-sm font-medium text-muted-foreground border-b border-dashed border-foreground/20 hover:text-foreground hover:border-foreground/35 transition-colors pb-0.5">
+            <a href="#why-this" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-dashed border-muted-foreground/30 pb-0.5">
               See If Your Property Qualifies
             </a>
           </div>
 
-          <p className="mt-4 text-xs text-muted-foreground/70">
+          <p className="mt-5 text-xs text-muted-foreground/60">
             Calm, transparent terms. No hype. Built for long-term rental portfolio builders.
           </p>
         </div>
 
         {/* Right — Form */}
-        <div className="glass p-6 flex flex-col">
+        <div className="glass p-8">
           <h2 className="text-xl font-bold">Get rental loan terms</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Takes less than 3 minutes. We'll follow up with clear terms and qualification guidance.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-5 grid gap-3 flex-1">
+          <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
             {[
               { label: "Name", key: "name", type: "text", placeholder: "Full name" },
               { label: "Email", key: "email", type: "email", placeholder: "you@email.com" },
@@ -82,26 +77,26 @@ const HeroSection = () => {
               { label: "Entity Name (optional)", key: "entity", type: "text", placeholder: "Your LLC" },
             ].map((f) => (
               <div key={f.key} className="grid gap-1.5">
-                <label className="text-xs text-muted-foreground/80">{f.label}</label>
+                <label className="text-xs font-medium text-muted-foreground">{f.label}</label>
                 <input
                   type={f.type}
                   placeholder={f.placeholder}
                   required={f.key !== "entity"}
                   value={formData[f.key as keyof typeof formData]}
                   onChange={(e) => setFormData((p) => ({ ...p, [f.key]: e.target.value }))}
-                  className="w-full px-3 py-2.5 rounded-xl border border-foreground/10 bg-background/40 text-foreground text-sm outline-none focus:border-secondary/40 focus:bg-background/60 transition-colors placeholder:text-muted-foreground/50"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background/60 text-foreground text-sm outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted-foreground/40"
                 />
               </div>
             ))}
 
             <button
               type="submit"
-              className="w-full mt-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-foreground text-background font-semibold text-sm hover:bg-foreground/90 transition-colors"
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
             >
               Request Rental Loan Terms →
             </button>
 
-            <p className="text-[11px] text-muted-foreground/60 leading-relaxed mt-1">
+            <p className="text-[11px] text-muted-foreground/50 leading-relaxed mt-1">
               By submitting, you agree to be contacted about investor rental loan options. No spam.
             </p>
           </form>

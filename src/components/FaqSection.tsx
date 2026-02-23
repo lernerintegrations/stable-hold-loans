@@ -13,36 +13,36 @@ const FaqSection = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="container py-16">
-      <div className="glass-soft p-7">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+    <section id="faq" className="container py-20">
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           Let's Address the Real Questions
         </h2>
-        <p className="mt-3 text-muted-foreground">Clear answers. No guesswork.</p>
+        <p className="mt-4 text-muted-foreground">Clear answers. No guesswork.</p>
+      </div>
 
-        <div className="mt-8 grid gap-3">
-          {faqs.map((f, i) => (
-            <div
-              key={i}
-              className="rounded-2xl border border-foreground/8 bg-foreground/4 overflow-hidden"
+      <div className="max-w-2xl mx-auto grid gap-3">
+        {faqs.map((f, i) => (
+          <div
+            key={i}
+            className="glass overflow-hidden"
+          >
+            <button
+              onClick={() => setOpen(open === i ? null : i)}
+              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-foreground/90 hover:text-foreground transition-colors"
             >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left font-semibold text-foreground/90 hover:text-foreground transition-colors"
-              >
-                <span>{f.q}</span>
-                <ChevronDown className={`w-4 h-4 shrink-0 text-muted-foreground transition-transform duration-200 ${open === i ? "rotate-180" : ""}`} />
-              </button>
-              <div
-                className={`grid transition-all duration-250 ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-              >
-                <div className="overflow-hidden">
-                  <p className="px-4 pb-3.5 text-sm text-muted-foreground pr-10">{f.a}</p>
-                </div>
+              <span>{f.q}</span>
+              <ChevronDown className={`w-4 h-4 shrink-0 text-primary transition-transform duration-200 ${open === i ? "rotate-180" : ""}`} />
+            </button>
+            <div
+              className={`grid transition-all duration-250 ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+            >
+              <div className="overflow-hidden">
+                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

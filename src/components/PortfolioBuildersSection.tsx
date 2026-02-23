@@ -7,7 +7,7 @@ const PortfolioBuildersSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           Built for Portfolio Builders
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           If you think in cash flow, equity, and repeatability — this program is designed for you.
         </p>
       </div>
@@ -18,7 +18,7 @@ const PortfolioBuildersSection = () => {
             <Target className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-lg mb-4 text-center">Ideal if you:</h3>
-          <ul className="space-y-2 text-muted-foreground text-sm list-disc pl-5">
+          <ul className="space-y-2 text-muted-foreground text-[15px] list-disc pl-5">
             <li>Own 2+ rental properties</li>
             <li>Plan to hold long-term</li>
             <li>Purchase in LLCs</li>
@@ -32,7 +32,7 @@ const PortfolioBuildersSection = () => {
             <Layers className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-lg mb-4 text-center">Built to support:</h3>
-          <ul className="space-y-2 text-muted-foreground text-sm list-disc pl-5">
+          <ul className="space-y-2 text-muted-foreground text-[15px] list-disc pl-5">
             <li>Repeat acquisitions</li>
             <li>Portfolio expansion</li>
             <li>Stabilized long-term holds</li>

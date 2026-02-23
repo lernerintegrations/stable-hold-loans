@@ -5,7 +5,7 @@ const FinalCtaSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           See If Your Rental Property Qualifies
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           Clear terms. Transparent structure. Investor-focused underwriting.
         </p>
         <p className="mt-2 text-xs text-muted-foreground/60">Takes less than 3 minutes.</p>

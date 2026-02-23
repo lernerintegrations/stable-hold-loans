@@ -13,7 +13,7 @@ const HowItWorksSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           Rental Financing. Simplified.
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           Clear steps. Transparent terms. Built to move with professional operators.
         </p>
       </div>
@@ -26,7 +26,7 @@ const HowItWorksSection = () => {
             </div>
             <p className="text-xs text-primary font-semibold tracking-wider uppercase mb-2">Step {s.num}</p>
             <h3 className="font-bold text-lg">{s.title}</h3>
-            <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
+            <p className="mt-3 text-[15px] text-muted-foreground">{s.desc}</p>
           </div>
         ))}
       </div>

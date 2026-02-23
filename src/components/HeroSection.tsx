@@ -22,10 +22,10 @@ const HeroSection = () => {
     <section id="get-terms" className="container pt-20 pb-16">
       {/* Centered hero headline */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-[clamp(48px,6vw,72px)] font-bold leading-[1.06] tracking-tight">
           30-Year Fixed Rental Loans — Built for Real Estate Investors
         </h1>
-        <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-5 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Stop using short-term or retail bank financing for long-term rental properties.
           Lock in stable, predictable debt designed for portfolio growth.
         </p>
@@ -34,10 +34,10 @@ const HeroSection = () => {
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start">
         {/* Left – Bullets */}
         <div className="glass p-8">
-          <h2 className="text-xl font-bold mb-6">Why Investors Choose Us</h2>
+          <h2 className="text-2xl font-bold mb-6">Why Investors Choose Us</h2>
           <div className="grid gap-3">
             {bullets.map((b) => (
-              <div key={b} className="flex gap-3 items-start p-3 rounded-lg border border-primary/10 bg-primary/5 text-sm text-foreground/90">
+              <div key={b} className="flex gap-3 items-start p-3 rounded-lg border border-primary/10 bg-primary/5 text-[15px] text-foreground/90">
                 <span className="w-5 h-5 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mt-0.5 shrink-0">
                   <Check className="w-3 h-3 text-primary" />
                 </span>
@@ -62,7 +62,7 @@ const HeroSection = () => {
 
         {/* Right — Form */}
         <div className="glass p-8">
-          <h2 className="text-xl font-bold">Get rental loan terms</h2>
+          <h2 className="text-2xl font-bold">Get rental loan terms</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Takes less than 3 minutes. We'll follow up with clear terms and qualification guidance.
           </p>

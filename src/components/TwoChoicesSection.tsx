@@ -5,7 +5,7 @@ const TwoChoicesSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           You Have Two Choices
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           Choose the debt structure that matches how you actually invest.
         </p>
       </div>
@@ -14,7 +14,7 @@ const TwoChoicesSection = () => {
         <div className="glass p-7">
           <p className="text-xs text-primary font-semibold tracking-wider uppercase mb-3">Option 1</p>
           <h3 className="font-bold text-lg">Keep refinancing every 12–24 months.</h3>
-          <ul className="mt-4 space-y-2 text-muted-foreground text-sm list-disc pl-5">
+          <ul className="mt-4 space-y-2 text-muted-foreground text-[15px] list-disc pl-5">
             <li>Hope rates cooperate</li>
             <li>Accept balloon risk</li>
             <li>Operate under constant timing pressure</li>
@@ -23,7 +23,7 @@ const TwoChoicesSection = () => {
         <div className="glass p-7 border-primary/30">
           <p className="text-xs text-primary font-semibold tracking-wider uppercase mb-3">Option 2</p>
           <h3 className="font-bold text-lg">Lock in long-term fixed rental debt.</h3>
-          <ul className="mt-4 space-y-2 text-muted-foreground text-sm list-disc pl-5">
+          <ul className="mt-4 space-y-2 text-muted-foreground text-[15px] list-disc pl-5">
             <li>Stabilize cash flow</li>
             <li>Build equity consistently</li>
             <li>Scale confidently with predictable payments</li>

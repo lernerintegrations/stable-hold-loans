@@ -18,7 +18,7 @@ const FaqSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           Let's Address the Real Questions
         </h2>
-        <p className="mt-4 text-muted-foreground">Clear answers. No guesswork.</p>
+        <p className="mt-4 text-muted-foreground text-lg">Clear answers. No guesswork.</p>
       </div>
 
       <div className="max-w-2xl mx-auto grid gap-3">
@@ -29,7 +29,7 @@ const FaqSection = () => {
           >
             <button
               onClick={() => setOpen(open === i ? null : i)}
-              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-foreground/90 hover:text-foreground transition-colors"
+              className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-[15px] text-foreground hover:text-foreground transition-colors"
             >
               <span>{f.q}</span>
               <ChevronDown className={`w-4 h-4 shrink-0 text-primary transition-transform duration-200 ${open === i ? "rotate-180" : ""}`} />
@@ -38,7 +38,7 @@ const FaqSection = () => {
               className={`grid transition-all duration-250 ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
             >
               <div className="overflow-hidden">
-                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
+                <p className="px-6 pb-4 text-[15px] text-muted-foreground">{f.a}</p>
               </div>
             </div>
           </div>

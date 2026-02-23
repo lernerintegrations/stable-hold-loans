@@ -1,52 +1,51 @@
+import { Building, Banknote } from "lucide-react";
+
 const ComparisonSection = () => {
   return (
-    <section id="why-this" className="container py-16">
-      <div className="glass-soft p-7">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+    <section id="why-this" className="container py-20">
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           If You're Holding Rentals Long-Term… Why Finance Them Short-Term?
         </h2>
-        <p className="mt-3 text-muted-foreground max-w-2xl">
+        <p className="mt-4 text-muted-foreground">
           Most investors end up stuck between retail bank hoops and short-term debt that forces a refinance.
-          Neither is built for serious rental portfolio operators.
         </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-4 mt-8">
-          <div className="glass p-5">
-            <div className="flex items-center gap-2.5 font-bold mb-3">
-              <span>Retail Banks</span>
-              <span className="text-xs px-2.5 py-1 rounded-full border border-foreground/12 bg-foreground/5 text-muted-foreground font-normal">
-                Homeowner underwriting in disguise
-              </span>
-            </div>
-            <ul className="space-y-1 text-muted-foreground text-sm list-disc pl-4">
-              <li>Overanalyze tax returns</li>
-              <li>Cap you at 10 loans</li>
-              <li>Focus on personal DTI</li>
-              <li>Slow, inconsistent closings</li>
-            </ul>
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="glass glass-lift p-7 text-center">
+          <div className="icon-circle mx-auto mb-5">
+            <Building className="w-6 h-6" />
           </div>
-
-          <div className="glass p-5">
-            <div className="flex items-center gap-2.5 font-bold mb-3">
-              <span>Hard Money</span>
-              <span className="text-xs px-2.5 py-1 rounded-full border border-foreground/12 bg-foreground/5 text-muted-foreground font-normal">
-                Expensive for long-term holds
-              </span>
-            </div>
-            <ul className="space-y-1 text-muted-foreground text-sm list-disc pl-4">
-              <li>12–24 month balloon risk</li>
-              <li>High rates for hold strategy</li>
-              <li>Forced refinance pressure</li>
-              <li>Not designed for stabilization</li>
-            </ul>
-          </div>
+          <h3 className="font-bold text-lg mb-1">Retail Banks</h3>
+          <p className="text-xs text-muted-foreground mb-4">Homeowner underwriting in disguise</p>
+          <ul className="space-y-2 text-muted-foreground text-sm text-left list-disc pl-5">
+            <li>Overanalyze tax returns</li>
+            <li>Cap you at 10 loans</li>
+            <li>Focus on personal DTI</li>
+            <li>Slow, inconsistent closings</li>
+          </ul>
         </div>
 
-        <div className="usp-card p-5 mt-6">
-          <p className="text-sm text-foreground/85 font-medium">
-            Bottom line: if your goal is long-term rental cash flow, your debt should match your strategy.
-          </p>
+        <div className="glass glass-lift p-7 text-center">
+          <div className="icon-circle mx-auto mb-5">
+            <Banknote className="w-6 h-6" />
+          </div>
+          <h3 className="font-bold text-lg mb-1">Hard Money</h3>
+          <p className="text-xs text-muted-foreground mb-4">Expensive for long-term holds</p>
+          <ul className="space-y-2 text-muted-foreground text-sm text-left list-disc pl-5">
+            <li>12–24 month balloon risk</li>
+            <li>High rates for hold strategy</li>
+            <li>Forced refinance pressure</li>
+            <li>Not designed for stabilization</li>
+          </ul>
         </div>
+      </div>
+
+      <div className="usp-card p-6 mt-8 text-center max-w-2xl mx-auto">
+        <p className="text-sm text-foreground/90 font-medium">
+          Bottom line: if your goal is long-term rental cash flow, your debt should match your strategy.
+        </p>
       </div>
     </section>
   );

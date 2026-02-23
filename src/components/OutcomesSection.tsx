@@ -16,7 +16,7 @@ const OutcomesSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           What This Means for You
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           Features are nice. Outcomes are what matter.
         </p>
       </div>
@@ -27,8 +27,8 @@ const OutcomesSection = () => {
             <div className="icon-circle mx-auto mb-5">
               <o.icon className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-base">{o.title}</h3>
-            <p className="mt-3 text-sm text-muted-foreground">{o.desc}</p>
+            <h3 className="font-bold text-lg">{o.title}</h3>
+            <p className="mt-3 text-[15px] text-muted-foreground">{o.desc}</p>
           </div>
         ))}
       </div>

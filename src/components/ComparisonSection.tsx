@@ -7,7 +7,7 @@ const ComparisonSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           If You're Holding Rentals Long-Term… Why Finance Them Short-Term?
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-4 text-muted-foreground text-lg">
           Most investors end up stuck between retail bank hoops and short-term debt that forces a refinance.
         </p>
       </div>
@@ -19,7 +19,7 @@ const ComparisonSection = () => {
           </div>
           <h3 className="font-bold text-lg mb-1">Retail Banks</h3>
           <p className="text-xs text-muted-foreground mb-4">Homeowner underwriting in disguise</p>
-          <ul className="space-y-2 text-muted-foreground text-sm text-left list-disc pl-5">
+          <ul className="space-y-2 text-muted-foreground text-[15px] text-left list-disc pl-5">
             <li>Overanalyze tax returns</li>
             <li>Cap you at 10 loans</li>
             <li>Focus on personal DTI</li>
@@ -33,7 +33,7 @@ const ComparisonSection = () => {
           </div>
           <h3 className="font-bold text-lg mb-1">Hard Money</h3>
           <p className="text-xs text-muted-foreground mb-4">Expensive for long-term holds</p>
-          <ul className="space-y-2 text-muted-foreground text-sm text-left list-disc pl-5">
+          <ul className="space-y-2 text-muted-foreground text-[15px] text-left list-disc pl-5">
             <li>12–24 month balloon risk</li>
             <li>High rates for hold strategy</li>
             <li>Forced refinance pressure</li>
@@ -43,7 +43,7 @@ const ComparisonSection = () => {
       </div>
 
       <div className="usp-card p-6 mt-8 text-center max-w-2xl mx-auto">
-        <p className="text-sm text-foreground/90 font-medium">
+        <p className="text-base text-foreground/90 font-medium">
           Bottom line: if your goal is long-term rental cash flow, your debt should match your strategy.
         </p>
       </div>

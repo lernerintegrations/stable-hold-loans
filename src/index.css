@@ -2,95 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 40% 5%;
+    --foreground: 222 60% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 30% 8%;
+    --card-foreground: 222 60% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 222 60% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 148 42% 72%;
+    --primary-foreground: 220 50% 7%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 228 100% 83%;
+    --secondary-foreground: 220 50% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 222 30% 72%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 100% 73%;
+    --accent-foreground: 220 50% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 18%;
+    --input: 220 20% 12%;
+    --ring: 228 100% 83%;
 
-    --radius: 0.5rem;
+    --radius: 0.875rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 30% 6%;
+    --sidebar-foreground: 222 60% 95%;
+    --sidebar-primary: 148 42% 72%;
+    --sidebar-primary-foreground: 220 50% 7%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 222 60% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 228 100% 83%;
   }
 }
 
@@ -102,4 +53,94 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Background animation */
+@keyframes drift {
+  from { transform: translate3d(-1.2%, -0.8%, 0) scale(1.02); }
+  to   { transform: translate3d(1.0%, 1.0%, 0) scale(1.06); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 800px at 15% 12%, hsla(148, 42%, 72%, 0.18) 0%, transparent 60%),
+    radial-gradient(1000px 700px at 85% 18%, hsla(228, 100%, 83%, 0.14) 0%, transparent 65%),
+    radial-gradient(900px 650px at 50% 110%, hsla(40, 100%, 73%, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, hsl(220, 40%, 5%), hsl(220, 30%, 8%));
+}
+
+.bg-scene::before {
+  content: "";
+  position: absolute;
+  inset: -40vh -40vw;
+  background:
+    radial-gradient(700px 500px at 25% 30%, hsla(148, 42%, 72%, 0.16) 0%, transparent 60%),
+    radial-gradient(780px 560px at 75% 22%, hsla(228, 100%, 83%, 0.14) 0%, transparent 62%),
+    radial-gradient(820px 620px at 50% 78%, hsla(40, 100%, 73%, 0.08) 0%, transparent 60%);
+  filter: blur(18px);
+  animation: drift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Glass utilities */
+.glass {
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.08), hsla(0, 0%, 100%, 0.06));
+  border: 1px solid hsla(0, 0%, 100%, 0.14);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px hsla(0, 0%, 0%, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-soft {
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.07), hsla(0, 0%, 100%, 0.05));
+  border: 1px solid hsla(0, 0%, 100%, 0.10);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 26px hsla(0, 0%, 0%, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-lift {
+  transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.glass-lift:hover {
+  transform: translateY(-2px);
+  border-color: hsla(0, 0%, 100%, 0.20);
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.09), hsla(0, 0%, 100%, 0.06));
+}
+
+/* USP callout */
+.usp-card {
+  position: relative;
+  border: 1px solid hsla(228, 100%, 83%, 0.26);
+  background: radial-gradient(900px 240px at 20% 0%, hsla(228, 100%, 83%, 0.18) 0%, hsla(0, 0%, 100%, 0.06) 45%, hsla(0, 0%, 100%, 0.04) 100%);
+  box-shadow: 0 8px 26px hsla(0, 0%, 0%, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.usp-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(400px 120px at 30% 10%, hsla(148, 42%, 72%, 0.18) 0%, transparent 60%);
+  filter: blur(14px);
+  pointer-events: none;
+  opacity: 0.8;
+}
+.usp-card > * { position: relative; z-index: 1; }
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
 }

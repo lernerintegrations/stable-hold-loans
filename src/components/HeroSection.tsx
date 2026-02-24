@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const bullets = [
   "30-Year Amortization for long-term hold strategy",
@@ -10,12 +11,39 @@ const bullets = [
 ];
 
 const HeroSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", address: "", rent: "", entity: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    try {
+      await fetch(
+        "https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/e7990f0b-20a1-4127-9428-ddd056ba0eb0",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            full_name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            property_address: formData.address,
+            estimated_rent: formData.rent,
+            entity_name: formData.entity,
+          }),
+          mode: "no-cors",
+        }
+      );
+      toast({ title: "Request sent!", description: "We'll follow up with your rental loan terms shortly." });
+      setFormData({ name: "", email: "", phone: "", address: "", rent: "", entity: "" });
+    } catch {
+      toast({ title: "Something went wrong", description: "Please try again or contact us directly.", variant: "destructive" });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -91,9 +119,10 @@ const HeroSection = () => {
 
             <button
               type="submit"
-              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+              disabled={submitting}
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
             >
-              Request Rental Loan Terms →
+              {submitting ? "Sending…" : "Request Rental Loan Terms →"}
             </button>
 
             <p className="text-[11px] text-muted-foreground/50 leading-relaxed mt-1">

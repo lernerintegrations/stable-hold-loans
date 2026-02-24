@@ -2,11 +2,9 @@ const SiteHeader = () => {
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="container flex items-center justify-between py-4">
-        <a href="#" className="flex items-center gap-2.5 font-bold tracking-tight text-lg">
-          <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground text-xs font-black">IR</span>
-          </div>
-          <span>Investor Rental Loans</span>
+        <a href="#" className="flex items-center gap-1 font-bold tracking-tight text-lg">
+          <span className="font-extrabold text-white text-xl">RENT</span>
+          <span className="font-medium text-[hsl(155,68%,51%)] text-xl">Refi</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1 text-sm text-muted-foreground">

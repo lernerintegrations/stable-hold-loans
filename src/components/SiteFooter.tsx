@@ -22,7 +22,7 @@ const SiteFooter = () => {
                 <a
                   key={l}
                   href={l === "Contact" ? "mailto:hello@yourdomain.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="px-3 py-2 rounded-lg bg-muted border border-border hover:bg-muted/80 hover:text-foreground transition-colors"
+                  className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors"
                 >
                   {l}
                 </a>

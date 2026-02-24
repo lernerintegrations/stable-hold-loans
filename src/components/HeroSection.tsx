@@ -84,7 +84,7 @@ const HeroSection = () => {
                   required={f.key !== "entity"}
                   value={formData[f.key as keyof typeof formData]}
                   onChange={(e) => setFormData((p) => ({ ...p, [f.key]: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background/60 text-foreground text-sm outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted-foreground/40"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted-foreground/50"
                 />
               </div>
             ))}

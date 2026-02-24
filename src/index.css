@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --background: 222 47% 8%;
-    --foreground: 0 0% 100%;
+    --background: 210 20% 98%;
+    --foreground: 213 50% 20%;
 
-    --card: 222 40% 12%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 20%;
 
-    --popover: 222 40% 12%;
-    --popover-foreground: 220 30% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 20%;
 
     --primary: 155 68% 39%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 155 50% 30%;
+    --secondary: 213 60% 22%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 30% 16%;
-    --muted-foreground: 220 20% 78%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 20% 46%;
 
     --accent: 155 68% 45%;
     --accent-foreground: 0 0% 100%;
@@ -28,19 +28,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 14%;
+    --border: 210 20% 90%;
+    --input: 210 20% 92%;
     --ring: 155 68% 39%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 222 40% 9%;
-    --sidebar-foreground: 220 30% 95%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 213 50% 20%;
     --sidebar-primary: 155 68% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 30% 16%;
-    --sidebar-accent-foreground: 220 30% 95%;
-    --sidebar-border: 222 30% 18%;
+    --sidebar-accent: 210 20% 94%;
+    --sidebar-accent-foreground: 213 50% 20%;
+    --sidebar-border: 210 20% 90%;
     --sidebar-ring: 155 68% 39%;
   }
 }
@@ -55,12 +55,12 @@
   }
 }
 
-/* Background scene – deep navy with large decorative circles */
+/* Background scene – light with subtle shapes */
 .bg-scene {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(165deg, hsl(222, 47%, 8%) 0%, hsl(222, 47%, 5%) 100%);
+  background: linear-gradient(165deg, hsl(210, 20%, 98%) 0%, hsl(210, 25%, 95%) 100%);
   overflow: hidden;
 }
 
@@ -69,8 +69,8 @@
   content: "";
   position: absolute;
   border-radius: 50%;
-  border: 1px solid hsla(155, 68%, 39%, 0.12);
-  background: radial-gradient(circle, hsla(155, 68%, 39%, 0.06) 0%, transparent 70%);
+  border: 1px solid hsla(155, 68%, 39%, 0.08);
+  background: radial-gradient(circle, hsla(155, 68%, 39%, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -100,23 +100,19 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Glass cards – blue-tinted */
+/* Cards – clean white with subtle shadow */
 .glass {
-  background: hsla(222, 40%, 14%, 0.7);
-  border: 1px solid hsla(155, 68%, 39%, 0.18);
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(210, 20%, 90%);
   border-radius: var(--radius);
-  box-shadow: 0 8px 32px hsla(222, 50%, 4%, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 3px hsla(213, 50%, 20%, 0.06), 0 4px 16px hsla(213, 50%, 20%, 0.04);
 }
 
 .glass-soft {
-  background: hsla(222, 40%, 12%, 0.5);
-  border: 1px solid hsla(155, 68%, 39%, 0.10);
+  background: hsl(210, 20%, 99%);
+  border: 1px solid hsl(210, 20%, 92%);
   border-radius: var(--radius);
-  box-shadow: 0 4px 20px hsla(222, 50%, 4%, 0.35);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 3px hsla(213, 50%, 20%, 0.04);
 }
 
 .glass-lift {
@@ -124,18 +120,16 @@
 }
 .glass-lift:hover {
   transform: translateY(-3px);
-  border-color: hsla(155, 68%, 39%, 0.32);
-  box-shadow: 0 12px 40px hsla(222, 50%, 4%, 0.6);
+  border-color: hsl(155, 68%, 39%);
+  box-shadow: 0 4px 20px hsla(155, 68%, 39%, 0.1), 0 8px 32px hsla(213, 50%, 20%, 0.06);
 }
 
-/* USP callout – blue glow card */
+/* USP callout card */
 .usp-card {
   position: relative;
-  border: 1px solid hsla(155, 68%, 39%, 0.28);
-  background: hsla(222, 40%, 14%, 0.6);
-  box-shadow: 0 8px 32px hsla(222, 50%, 4%, 0.4), inset 0 1px 0 hsla(155, 68%, 39%, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(213, 50%, 88%);
+  background: hsl(213, 50%, 96%);
+  box-shadow: 0 2px 12px hsla(213, 50%, 20%, 0.06);
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -143,14 +137,14 @@
   content: "";
   position: absolute;
   inset: -2px;
-  background: radial-gradient(500px 150px at 30% 10%, hsla(155, 68%, 39%, 0.14) 0%, transparent 60%);
+  background: radial-gradient(500px 150px at 30% 10%, hsla(155, 68%, 39%, 0.06) 0%, transparent 60%);
   filter: blur(16px);
   pointer-events: none;
   opacity: 0.8;
 }
 .usp-card > * { position: relative; z-index: 1; }
 
-/* Icon circle – Yieldi style */
+/* Icon circle */
 .icon-circle {
   width: 56px;
   height: 56px;

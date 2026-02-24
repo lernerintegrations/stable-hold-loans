@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 213 50% 20%;
+    --background: 215 35% 18%;
+    --foreground: 0 0% 97%;
 
     --card: 0 0% 100%;
     --card-foreground: 213 50% 20%;
@@ -19,8 +19,8 @@
     --secondary: 213 60% 22%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 213 20% 46%;
+    --muted: 215 30% 24%;
+    --muted-foreground: 210 15% 65%;
 
     --accent: 155 68% 45%;
     --accent-foreground: 0 0% 100%;
@@ -28,19 +28,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 92%;
+    --border: 215 25% 26%;
+    --input: 215 30% 22%;
     --ring: 155 68% 39%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 213 50% 20%;
+    --sidebar-background: 215 35% 16%;
+    --sidebar-foreground: 0 0% 97%;
     --sidebar-primary: 155 68% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 94%;
-    --sidebar-accent-foreground: 213 50% 20%;
-    --sidebar-border: 210 20% 90%;
+    --sidebar-accent: 215 30% 24%;
+    --sidebar-accent-foreground: 0 0% 97%;
+    --sidebar-border: 215 25% 26%;
     --sidebar-ring: 155 68% 39%;
   }
 }
@@ -60,7 +60,7 @@
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(165deg, hsl(210, 20%, 98%) 0%, hsl(210, 25%, 95%) 100%);
+  background: linear-gradient(165deg, hsl(215, 35%, 18%) 0%, hsl(215, 35%, 14%) 100%);
   overflow: hidden;
 }
 

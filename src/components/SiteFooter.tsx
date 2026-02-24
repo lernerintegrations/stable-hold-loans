@@ -1,11 +1,11 @@
 const SiteFooter = () => {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-background/60 backdrop-blur-xl">
       <div className="container py-12">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
           <div>
             <div className="flex items-center gap-1 font-bold text-lg mb-4">
-              <span className="font-extrabold text-secondary text-xl">RENT</span>
+              <span className="font-extrabold text-foreground text-xl">RENT</span>
               <span className="font-medium text-primary text-xl">Refi</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">

@@ -22,7 +22,7 @@ const HeroSection = () => {
     setSubmitting(true);
     try {
       await fetch(
-        "https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/e7990f0b-20a1-4127-9428-ddd056ba0eb0",
+        "https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/98421fc2-c4b7-4d2d-8ff0-48857b3b6371",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

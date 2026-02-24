@@ -13,16 +13,16 @@
     --popover: 222 40% 12%;
     --popover-foreground: 220 30% 95%;
 
-    --primary: 225 80% 56%;
+    --primary: 155 68% 39%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 225 60% 42%;
+    --secondary: 155 50% 30%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 222 30% 16%;
     --muted-foreground: 220 20% 78%;
 
-    --accent: 225 100% 65%;
+    --accent: 155 68% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,18 +30,18 @@
 
     --border: 222 30% 18%;
     --input: 222 30% 14%;
-    --ring: 225 80% 56%;
+    --ring: 155 68% 39%;
 
     --radius: 1rem;
 
     --sidebar-background: 222 40% 9%;
     --sidebar-foreground: 220 30% 95%;
-    --sidebar-primary: 225 80% 56%;
+    --sidebar-primary: 155 68% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 30% 16%;
     --sidebar-accent-foreground: 220 30% 95%;
     --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 225 80% 56%;
+    --sidebar-ring: 155 68% 39%;
   }
 }
 
@@ -69,8 +69,8 @@
   content: "";
   position: absolute;
   border-radius: 50%;
-  border: 1px solid hsla(225, 80%, 56%, 0.12);
-  background: radial-gradient(circle, hsla(225, 80%, 56%, 0.06) 0%, transparent 70%);
+  border: 1px solid hsla(155, 68%, 39%, 0.12);
+  background: radial-gradient(circle, hsla(155, 68%, 39%, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -103,7 +103,7 @@
 /* Glass cards – blue-tinted */
 .glass {
   background: hsla(222, 40%, 14%, 0.7);
-  border: 1px solid hsla(225, 80%, 56%, 0.18);
+  border: 1px solid hsla(155, 68%, 39%, 0.18);
   border-radius: var(--radius);
   box-shadow: 0 8px 32px hsla(222, 50%, 4%, 0.5);
   backdrop-filter: blur(16px);
@@ -112,7 +112,7 @@
 
 .glass-soft {
   background: hsla(222, 40%, 12%, 0.5);
-  border: 1px solid hsla(225, 80%, 56%, 0.10);
+  border: 1px solid hsla(155, 68%, 39%, 0.10);
   border-radius: var(--radius);
   box-shadow: 0 4px 20px hsla(222, 50%, 4%, 0.35);
   backdrop-filter: blur(16px);
@@ -124,16 +124,16 @@
 }
 .glass-lift:hover {
   transform: translateY(-3px);
-  border-color: hsla(225, 80%, 56%, 0.32);
+  border-color: hsla(155, 68%, 39%, 0.32);
   box-shadow: 0 12px 40px hsla(222, 50%, 4%, 0.6);
 }
 
 /* USP callout – blue glow card */
 .usp-card {
   position: relative;
-  border: 1px solid hsla(225, 80%, 56%, 0.28);
+  border: 1px solid hsla(155, 68%, 39%, 0.28);
   background: hsla(222, 40%, 14%, 0.6);
-  box-shadow: 0 8px 32px hsla(222, 50%, 4%, 0.4), inset 0 1px 0 hsla(225, 80%, 56%, 0.08);
+  box-shadow: 0 8px 32px hsla(222, 50%, 4%, 0.4), inset 0 1px 0 hsla(155, 68%, 39%, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius);
@@ -143,7 +143,7 @@
   content: "";
   position: absolute;
   inset: -2px;
-  background: radial-gradient(500px 150px at 30% 10%, hsla(225, 80%, 56%, 0.14) 0%, transparent 60%);
+  background: radial-gradient(500px 150px at 30% 10%, hsla(155, 68%, 39%, 0.14) 0%, transparent 60%);
   filter: blur(16px);
   pointer-events: none;
   opacity: 0.8;
@@ -155,12 +155,12 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 2px solid hsl(225, 80%, 56%);
-  background: hsla(225, 80%, 56%, 0.08);
+  border: 2px solid hsl(155, 68%, 39%);
+  background: hsla(155, 68%, 39%, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hsl(225, 80%, 56%);
+  color: hsl(155, 68%, 39%);
   flex-shrink: 0;
 }
 

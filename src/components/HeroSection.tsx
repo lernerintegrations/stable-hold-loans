@@ -21,19 +21,20 @@ const HeroSection = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
+      const params = new URLSearchParams({
+        full_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        property_address: formData.address,
+        estimated_rent: formData.rent,
+        entity_name: formData.entity,
+      });
       await fetch(
         "https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/98421fc2-c4b7-4d2d-8ff0-48857b3b6371",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            full_name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            property_address: formData.address,
-            estimated_rent: formData.rent,
-            entity_name: formData.entity,
-          }),
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params.toString(),
           mode: "no-cors",
         }
       );

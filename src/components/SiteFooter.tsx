@@ -4,11 +4,9 @@ const SiteFooter = () => {
       <div className="container py-12">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
           <div>
-            <div className="flex items-center gap-2.5 font-bold text-lg mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground text-xs font-black">IR</span>
-              </div>
-              <span>Investor Rental Loans</span>
+            <div className="flex items-center gap-1 font-bold text-lg mb-4">
+              <span className="font-extrabold text-white text-xl">RENT</span>
+              <span className="font-medium text-[hsl(155,68%,51%)] text-xl">Refi</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
               30-Year Fixed Rental Loans — built for investors. Designed to scale.

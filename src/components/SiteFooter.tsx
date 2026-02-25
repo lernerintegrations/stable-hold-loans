@@ -1,3 +1,11 @@
+import { Instagram, Facebook, Linkedin } from "lucide-react";
+
+const socials = [
+  { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/", label: "Facebook" },
+  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
+];
+
 const SiteFooter = () => {
   return (
     <footer className="border-t border-border bg-background/60 backdrop-blur-xl">
@@ -28,9 +36,25 @@ Loans are for investment purposes only and not for personal, family, or househol
                 </a>
               )}
             </div>
-            <p className="mt-5 text-xs text-muted-foreground/50">
-              © {new Date().getFullYear()} RentRefi. All rights reserved.
-            </p>
+            <div className="mt-5 flex items-center gap-4">
+              <p className="text-xs text-muted-foreground/50">
+                © {new Date().getFullYear()} RentRefi. All rights reserved.
+              </p>
+              <div className="flex gap-2">
+                {socials.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="p-2 rounded-lg bg-muted/50 border border-border text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                  >
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

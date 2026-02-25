@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Mail, Phone, Clock } from "lucide-react";
 
 const socials = [
   { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
@@ -10,7 +10,7 @@ const SiteFooter = () => {
   return (
     <footer className="border-t border-border bg-background/60 backdrop-blur-xl">
       <div className="container py-12">
-        <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+        <div className="grid md:grid-cols-[1.2fr_0.8fr_0.8fr] gap-8 items-start">
           <div>
             <div className="flex items-center gap-1 font-bold text-lg mb-4">
               <span className="font-extrabold text-foreground text-xl">RENT</span>
@@ -29,7 +29,7 @@ Loans are for investment purposes only and not for personal, family, or househol
 
           <div>
             <div className="flex flex-wrap gap-2.5 text-[13px] text-muted-foreground">
-              {["Get Terms", "How It Works", "FAQ", "Benefits", "Contact"].map((l) => <a key={l} href={l === "Contact" ? "mailto:hello@yourdomain.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
+              {["Get Terms", "How It Works", "FAQ", "Benefits", "Contact"].map((l) => <a key={l} href={l === "Contact" ? "mailto:info@rentrefi.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
               className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors">
 
                   {l}
@@ -55,6 +55,28 @@ Loans are for investment purposes only and not for personal, family, or househol
                 ))}
               </div>
             </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <Clock size={15} className="text-primary shrink-0" />
+                <span>Mon–Fri: 9am – 5pm CST</span>
+              </li>
+              <li>
+                <a href="mailto:info@rentrefi.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                  <Mail size={15} className="text-primary shrink-0" />
+                  <span>info@rentrefi.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:1234567890" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                  <Phone size={15} className="text-primary shrink-0" />
+                  <span>123.456.7890</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

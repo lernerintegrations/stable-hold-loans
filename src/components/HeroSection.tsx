@@ -7,7 +7,7 @@ const bullets = [
   "Fixed Rate — No Balloon predictable payments",
   "Investor-Focused Underwriting built for operators",
   "Entity Lending Available (LLC-friendly)",
-  "Built for Repeat Investors - Scale with a lending partner",
+  "Built for Repeat Investors - Scale with a Lending Partner",
 ];
 
 const HeroSection = () => {

@@ -19,7 +19,7 @@ const PortfolioBuildersSection = () => {
           </div>
           <h3 className="font-bold text-lg mb-4 text-center">Ideal if you:</h3>
           <ul className="space-y-2 text-muted-foreground text-[15px] list-disc pl-5">
-            <li>Own 2+ rental properties</li>
+            <li>Own 1+ rental properties</li>
             <li>Plan to hold long-term</li>
             <li>Purchase in LLCs</li>
             <li>Want predictable debt</li>
@@ -50,8 +50,8 @@ const PortfolioBuildersSection = () => {
           Read FAQ
         </a>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default PortfolioBuildersSection;

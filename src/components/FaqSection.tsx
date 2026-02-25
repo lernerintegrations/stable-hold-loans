@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   { q: "Is this hard money?", a: "No. This is long-term rental financing with 30-year amortization and fixed-rate stability." },
-  { q: "Is there a balloon?", a: "No balloon. The loan is structured for long-term holds with predictable payments." },
+  { q: "Is there a minimum credit score?", a: "Yes — the credit score minimum is 660." },
   { q: "Do I need W-2 income?", a: "This is structured for real estate investors. Property and rental performance matter." },
   { q: "Can I close in my LLC?", a: "Yes. Entity lending is available (LLC-friendly)." },
   { q: "Can I finance multiple properties?", a: "Yes. This program is built for repeat operators and portfolio growth." },

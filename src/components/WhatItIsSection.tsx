@@ -40,14 +40,14 @@ const WhatItIsSection = () => {
       </div>
 
       <div className="usp-card p-7 mt-8 text-center max-w-3xl mx-auto">
-        <h3 className="font-bold text-lg mb-2">The USP</h3>
+        
         <p className="text-[15px] text-foreground/85">
           We provide 30-year fixed rental loans underwritten for real estate investors — not retail homeowners —
           so you can scale your portfolio without short-term refinance risk or retail banking limitations.
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default WhatItIsSection;

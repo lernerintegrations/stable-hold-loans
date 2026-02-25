@@ -6,6 +6,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import PortfolioBuildersSection from "@/components/PortfolioBuildersSection";
 import OutcomesSection from "@/components/OutcomesSection";
 import TwoChoicesSection from "@/components/TwoChoicesSection";
+import CalculatorSection from "@/components/CalculatorSection";
 import FaqSection from "@/components/FaqSection";
 import FinalCtaSection from "@/components/FinalCtaSection";
 import SiteFooter from "@/components/SiteFooter";
@@ -23,6 +24,7 @@ const Index = () => {
         <PortfolioBuildersSection />
         <OutcomesSection />
         <TwoChoicesSection />
+        <CalculatorSection />
         <FaqSection />
         <FinalCtaSection />
       </main>

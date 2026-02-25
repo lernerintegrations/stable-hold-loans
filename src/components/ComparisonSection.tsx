@@ -21,7 +21,7 @@ const ComparisonSection = () => {
           <p className="text-xs text-muted-foreground mb-4">Homeowner underwriting in disguise</p>
           <ul className="space-y-2 text-muted-foreground text-[15px] text-left list-disc pl-5">
             <li>Overanalyze tax returns</li>
-            <li>Cap you at 10 loans</li>
+            <li>Cap you at specific number of loans</li>
             <li>Focus on personal DTI</li>
             <li>Slow, inconsistent closings</li>
           </ul>
@@ -47,8 +47,8 @@ const ComparisonSection = () => {
           Bottom line: if your goal is long-term rental cash flow, your debt should match your strategy.
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ComparisonSection;

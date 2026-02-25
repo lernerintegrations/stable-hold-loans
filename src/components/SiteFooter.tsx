@@ -11,22 +11,22 @@ const SiteFooter = () => {
             <p className="text-sm text-muted-foreground max-w-md">
               30-Year Fixed Rental Loans — built for investors. Designed to scale.
             </p>
-            <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">
-              Not for owner-occupied homes. Terms and eligibility vary. This page is a starter template—update disclosures to match your business and state requirements.
+            <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">Not for owner-occupied homes. Terms and eligibility vary. 
+
+Loans are for investment purposes only and not for personal, family, or household use. Loan product availability may be limited in certain states. This is not a commitment to lend. All loans are subject to borrower underwriting and credit approval, in RentRefi's sole and absolute discretion.
+
+
             </p>
           </div>
 
           <div>
             <div className="flex flex-wrap gap-2.5 text-[13px] text-muted-foreground">
-              {["Get Terms", "How It Works", "FAQ", "Benefits", "Contact"].map((l) => (
-                <a
-                  key={l}
-                  href={l === "Contact" ? "mailto:hello@yourdomain.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors"
-                >
+              {["Get Terms", "How It Works", "FAQ", "Benefits", "Contact"].map((l) => <a key={l} href={l === "Contact" ? "mailto:hello@yourdomain.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
+              className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors">
+
                   {l}
                 </a>
-              ))}
+              )}
             </div>
             <p className="mt-5 text-xs text-muted-foreground/50">
               © {new Date().getFullYear()} RentRefi. All rights reserved.
@@ -34,8 +34,8 @@ const SiteFooter = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default SiteFooter;

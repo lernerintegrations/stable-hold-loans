@@ -29,7 +29,7 @@ Loans are for investment purposes only and not for personal, family, or househol
 
           <div>
             <div className="flex flex-wrap gap-2.5 text-[13px] text-muted-foreground">
-              {["Get Terms", "How It Works", "FAQ", "Benefits", "Contact"].map((l) => <a key={l} href={l === "Contact" ? "mailto:info@rentrefi.com" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
+              {["Get Terms", "How It Works", "FAQ", "Benefits"].map((l) => <a key={l} href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
               className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors">
 
                   {l}

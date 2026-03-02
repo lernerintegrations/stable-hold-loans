@@ -1,9 +1,8 @@
-import { Instagram, Facebook, Linkedin, Mail, Phone, Clock } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, Clock } from "lucide-react";
 
 const socials = [
   { icon: Instagram, href: "https://www.instagram.com/rentrefi", label: "Instagram" },
   { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61550981867034", label: "Facebook" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
 ];
 
 const SiteFooter = () => {

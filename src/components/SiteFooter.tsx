@@ -1,7 +1,7 @@
 import { Instagram, Facebook, Linkedin, Mail, Phone, Clock } from "lucide-react";
 
 const socials = [
-  { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/rentrefi", label: "Instagram" },
   { icon: Facebook, href: "https://facebook.com/", label: "Facebook" },
   { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
 ];

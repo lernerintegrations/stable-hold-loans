@@ -63,7 +63,7 @@ const CalculatorSection = () => {
             <div className="space-y-3">
               <div><label className={labelClass}>Current Loan Balance ($)</label><input type="number" className={inputClass} value={f.curBalance} onChange={set("curBalance")} /></div>
               <div><label className={labelClass}>Current Interest Rate (%)</label><input type="number" step="0.01" className={inputClass} value={f.curRate} onChange={set("curRate")} /></div>
-              <div><label className={labelClass}>Years Remaining</label><input type="number" className={inputClass} value={f.curYears} onChange={set("curYears")} /></div>
+              <div><label className={labelClass}>Current Term (Years)</label><input type="number" className={inputClass} value={f.curYears} onChange={set("curYears")} /></div>
               <div><label className={labelClass}>Monthly Taxes + Insurance ($)</label><input type="number" className={inputClass} value={f.tiMonthly} onChange={set("tiMonthly")} /></div>
             </div>
           </div>
@@ -75,8 +75,6 @@ const CalculatorSection = () => {
               <div><label className={labelClass}>New Loan Amount ($)</label><input type="number" className={inputClass} value={f.newAmount} onChange={set("newAmount")} /></div>
               <div><label className={labelClass}>New Interest Rate (%)</label><input type="number" step="0.01" className={inputClass} value={f.newRate} onChange={set("newRate")} /></div>
               <div><label className={labelClass}>New Term (Years)</label><input type="number" className={inputClass} value={f.newYears} onChange={set("newYears")} /></div>
-              <div><label className={labelClass}>Estimated Closing Costs ($)</label><input type="number" className={inputClass} value={f.closingCosts} onChange={set("closingCosts")} /></div>
-              <div><label className={labelClass}>Cash Out Amount ($)</label><input type="number" className={inputClass} value={f.cashOut} onChange={set("cashOut")} /></div>
             </div>
           </div>
 
@@ -85,7 +83,7 @@ const CalculatorSection = () => {
             <h3 className="text-base font-semibold text-foreground mb-4">Rental Income</h3>
             <div className="space-y-3">
               <div><label className={labelClass}>Monthly Rent ($)</label><input type="number" className={inputClass} value={f.monthlyRent} onChange={set("monthlyRent")} /></div>
-              <div><label className={labelClass}>Other Monthly Income ($) <span className="opacity-60">(optional)</span></label><input type="number" className={inputClass} value={f.otherIncome} onChange={set("otherIncome")} /></div>
+              
             </div>
             <div className="mt-auto pt-6 flex gap-3">
               <button onClick={handleCalc} className="flex-1 rounded-lg bg-primary text-primary-foreground font-semibold py-2.5 text-sm hover:opacity-90 transition-opacity">Calculate</button>

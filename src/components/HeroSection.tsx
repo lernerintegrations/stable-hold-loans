@@ -68,7 +68,7 @@ const HeroSection = () => {
             {bullets.map((b) =>
             <div key={b} className="flex gap-3 items-start p-3 rounded-lg border border-primary/20 bg-primary/10 text-[15px] text-foreground/90">
                 <span className="w-5 h-5 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center mt-0.5 shrink-0">
-                  <Check className="w-3 h-3" color="hsl(155, 68%, 20%)" strokeWidth={3} />
+                  <Check className="w-3 h-3" color="white" strokeWidth={3} />
                 </span>
                 <span>{b}</span>
               </div>

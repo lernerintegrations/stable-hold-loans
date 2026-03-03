@@ -91,7 +91,7 @@ const HeroSection = () => {
 
         {/* Right — Form */}
         <div className="glass p-8">
-          <h2 className="text-2xl font-bold">Get rental loan terms</h2>
+          <h2 className="text-2xl font-bold">Get Rental Loan Terms -</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Takes less than 3 minutes. We'll follow up with clear terms and qualification guidance.
           </p>

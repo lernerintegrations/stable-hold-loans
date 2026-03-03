@@ -76,8 +76,8 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 items-center">
-            <a href="#get-terms" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors">
-              Request Rental Loan Terms →
+            <a href="#get-terms" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors">Submit Rental Loan Terms →
+
             </a>
             <a href="#why-this" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-dashed border-muted-foreground/30 pb-0.5">
               See If Your Property Qualifies

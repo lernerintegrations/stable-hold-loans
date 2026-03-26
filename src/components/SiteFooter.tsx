@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Mail, Phone, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const socials = [
   { icon: Instagram, href: "https://www.instagram.com/rentrefi", label: "Instagram" },
@@ -15,8 +16,10 @@ const SiteFooter = () => {
               <span className="font-extrabold text-foreground text-xl">RENT</span>
               <span className="font-medium text-primary text-xl">Refi</span>
             </div>
+
+            <p className="text-xs text-muted-foreground/70 mb-1">RENTREFI, LLC</p>
             <p className="text-sm text-muted-foreground max-w-md">
-              30-Year Fixed Rental Loans — built for investors. Designed to scale.
+              30-Year Fixed Rental Loans, built for investors. Designed to scale.
             </p>
             <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">Not for owner-occupied homes. Terms and eligibility vary. 
 
@@ -35,9 +38,14 @@ Loans are for investment purposes only and not for personal, family, or househol
                 </a>
               )}
             </div>
-            <div className="mt-5 flex items-center gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/70">
+              <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+              <span className="text-muted-foreground/30">|</span>
+              <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
+            </div>
+            <div className="mt-3 flex items-center gap-4">
               <p className="text-xs text-muted-foreground/50">
-                © {new Date().getFullYear()} RentRefi. All rights reserved.
+                © {new Date().getFullYear()} RENTREFI, LLC. All rights reserved.
               </p>
               <div className="flex gap-2">
                 {socials.map(({ icon: Icon, href, label }) => (

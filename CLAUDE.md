@@ -359,6 +359,70 @@ DSCR Ratio, DSCR Tier, Property Value, Loan Amount, Monthly Rent, LTV, Rate Rang
 - GHL pages: get.rentrefi.com
 
 ---
+## ============================================================
+## APPEND EVERYTHING BELOW TO THE BOTTOM OF CLAUDE.md
+## (above the Changelog section)
+## ============================================================
+
+---
+
+## PRIORITY: A2P SMS Compliance (Do Before Anything Else)
+
+RentRefi needs A2P 10DLC campaign approval in GoHighLevel before SMS workflows can go live. The site must have the following before the campaign can be submitted. Full compliance spec is in `docs/A2P-COMPLIANCE.md`.
+
+### Pages to Create
+1. **`/privacy-policy`** - Full privacy policy for RENTREFI, LLC. Content is in docs/A2P-COMPLIANCE.md Section 3.
+2. **`/terms-of-service`** - Full terms of service. Content is in docs/A2P-COMPLIANCE.md Section 4.
+
+Both pages should:
+- Use the same SiteHeader + SiteFooter layout as the rest of the site
+- Match the dark theme and brand tokens
+- Be simple, clean, readable legal text (no glass cards or fancy components)
+- Have proper `<title>` and meta description tags
+- Be added to react-router in App.tsx
+
+### Footer Updates
+Add to SiteFooter.tsx:
+- "Privacy Policy" link to `/privacy-policy`
+- "Terms of Service" link to `/terms-of-service`
+These must appear sitewide.
+
+### Hero Form: SMS Consent
+Add to HeroSection.tsx form, below the phone field and above submit:
+- Unchecked checkbox with SMS consent disclosure text
+- "Privacy Policy" and "Terms of Service" as clickable links within the text
+- Checkbox must NOT be pre-checked
+- See docs/A2P-COMPLIANCE.md Section 2 for exact copy
+
+### Hero Form: Fix Broken Submission
+The hero form currently posts to a GHL webhook but nothing arrives in GHL. Debug checklist:
+1. Open browser DevTools Network tab, submit the form, check if the POST request fires
+2. Check if the webhook URL is still valid: `https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/98421fc2-c4b7-4d2d-8ff0-48857b3b6371`
+3. Check if the payload format matches what GHL expects (field names, content types)
+4. Check for CORS errors in the console
+5. Check if there's error handling (or if errors are silently swallowed)
+
+### Business Identity on Site
+Ensure the following are visible somewhere on the site (footer is fine):
+- Full legal name: RENTREFI, LLC
+- Email: info@rentrefi.com
+- Phone: (needs real number from Shelby)
+
+---
+
+## Route Map (Current + Planned)
+
+| Route | Status | Component |
+|-------|--------|-----------|
+| `/` | Exists | pages/Index.tsx |
+| `/privacy-policy` | Needs to be built | A2P requirement |
+| `/terms-of-service` | Needs to be built | A2P requirement |
+| `*` | Exists | pages/NotFound.tsx |
+| `/columbia-mo` | Planned (Phase 4) | SEO landing page |
+| `/st-louis-mo` | Planned (Phase 4) | SEO landing page |
+| `/blog` | Planned (Phase 5) | Blog index |
+| `/blog/:slug` | Planned (Phase 5) | Blog post |
+---
 
 ## Changelog
 

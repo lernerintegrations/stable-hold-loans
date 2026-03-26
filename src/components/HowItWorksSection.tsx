@@ -2,7 +2,7 @@ import { FileText, Search, Lock } from "lucide-react";
 
 const steps = [
   { num: "01", title: "Submit Property Details", desc: "Tell us about the asset, rent, and entity structure.", icon: FileText },
-  { num: "02", title: "Investor-Focused Underwriting", desc: "We evaluate the property and rental performance — not homeowner criteria.", icon: Search },
+  { num: "02", title: "Investor-Focused Underwriting", desc: "We evaluate the property and rental performance, not homeowner criteria.", icon: Search },
   { num: "03", title: "Close and Stabilize", desc: "Lock in long-term fixed debt. No balloon. No reset risk.", icon: Lock },
 ];
 
@@ -10,8 +10,8 @@ const HowItWorksSection = () => {
   return (
     <section id="how-it-works" className="container py-20">
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-          Rental Financing. Simplified.
+        <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight">
+          Three Steps to Your DSCR Loan
         </h2>
         <p className="mt-4 text-muted-foreground text-lg">
           Clear steps. Transparent terms. Built to move with professional operators.

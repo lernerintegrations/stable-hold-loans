@@ -10,7 +10,7 @@ function pmt(principal: number, annualRatePct: number, years: number) {
 }
 
 function fmtMoney(n: number) {
-  if (!isFinite(n)) return "$—";
+  if (!isFinite(n)) return "$--";
   return n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }
 
@@ -48,7 +48,7 @@ const CalculatorSection = () => {
   return (
     <section id="calculator" className="container py-20">
       <div className="text-center max-w-2xl mx-auto mb-4">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Rental Refinance Calculator</h2>
+        <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight">Rental Refinance Calculator</h2>
         <p className="mt-4 text-muted-foreground text-lg">
           Compare your current loan vs a new 30-year fixed rental loan. Estimate payment, cash flow, and DSCR.
         </p>
@@ -113,7 +113,7 @@ const CalculatorSection = () => {
               </div>
               <div className="glass p-5 text-center">
                 <p className="text-xs font-medium text-muted-foreground mb-1">DSCR (Rent / PITI)</p>
-                <p className="text-2xl font-bold text-foreground">{isFinite(dscr) ? dscr.toFixed(2) : "—"}</p>
+                <p className="text-2xl font-bold text-foreground">{isFinite(dscr) ? dscr.toFixed(2) : "--"}</p>
                 <p className="text-xs text-muted-foreground mt-1">Estimate only; underwriting may differ.</p>
               </div>
             </div>

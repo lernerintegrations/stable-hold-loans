@@ -1,32 +1,26 @@
-/**
- * HeroSection.tsx — Lead capture form + hero content
- *
- * CHANGES (2026-03-26):
- * 1. Removed mode: "no-cors" — was making response opaque, hiding errors silently.
- *    GHL webhooks support CORS so this is not needed.
- * 2. Switched Content-Type from application/x-www-form-urlencoded to application/json.
- *    JSON payloads map more reliably to GHL custom fields.
- * 3. Added console.log statements for response status, payload, and errors to aid debugging.
- * 4. Added success state — form is replaced with a confirmation message after submission.
- * 5. Added visible error state — shows inline error message below the submit button on failure.
- * 6. smsConsent field included in webhook payload as boolean.
- * 7. Form clears and resets on successful submission (was already present, now also resets UI state).
- */
-
 import { useState } from "react";
-import { Check, CheckCircle } from "lucide-react";
+import { Check, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const WEBHOOK_URL =
   "https://services.leadconnectorhq.com/hooks/BFpydo68ZM7YR9ezSPDb/webhook-trigger/98421fc2-c4b7-4d2d-8ff0-48857b3b6371";
 
 const bullets = [
-"30-Year Amortization for long-term hold strategy",
-"Fixed Rate, No Balloon predictable payments",
-"Investor-Focused Underwriting built for operators",
-"Entity Lending Available (LLC-friendly)",
-"Built for Repeat Investors - Scale with a Lending Partner"];
+  "Qualify on rental income, not personal income",
+  "No tax returns, W-2s, or pay stubs required",
+  "No property count limit (banks cap at 4 to 10)",
+  "Close in LLC name directly",
+  "10 to 21 day close (vs 30 to 45 conventional)",
+];
 
+const formFields = [
+  { label: "Name", key: "name", type: "text", placeholder: "Full name" },
+  { label: "Email", key: "email", type: "email", placeholder: "you@email.com" },
+  { label: "Phone", key: "phone", type: "tel", placeholder: "(555) 555-5555" },
+  { label: "Property Address", key: "address", type: "text", placeholder: "123 Main St, City, State" },
+  { label: "Estimated Monthly Rent", key: "rent", type: "text", placeholder: "$2,500" },
+  { label: "Entity Name (optional)", key: "entity", type: "text", placeholder: "Your LLC" },
+];
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -83,90 +77,92 @@ const HeroSection = () => {
 
   return (
     <section id="get-terms" className="container pt-20 pb-16">
-      {/* Centered hero headline */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl sm:text-5xl lg:text-[clamp(48px,6vw,72px)] font-bold leading-[1.06] tracking-tight">
-          30-Year Fixed Rental Loans: Built for Real Estate Investors
+        <h1 className="font-heading text-4xl sm:text-5xl lg:text-[clamp(48px,6vw,72px)] font-bold leading-[1.06] tracking-tight">
+          DSCR Rental Loans, Simplified.
         </h1>
         <p className="mt-5 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Stop using short-term or retail bank financing for long-term rental properties.
-          Lock in stable, predictable debt designed for portfolio growth.
+          Qualify on your property's rental income, not your personal tax returns.
+          No W-2s. No DTI ratio. Close in 10 to 21 days.
         </p>
       </div>
 
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-start">
-        {/* Left – Bullets */}
+        {/* Left: Value props */}
         <div className="glass p-8">
-          <h2 className="text-2xl font-bold mb-6">Why Investors Choose Us</h2>
+          <h2 className="font-heading text-2xl font-bold mb-6">Why Investors Choose DSCR</h2>
           <div className="grid gap-3">
-            {bullets.map((b) =>
-            <div key={b} className="flex gap-3 items-start p-3 rounded-lg border border-primary/20 bg-primary/10 text-[15px] text-foreground/90">
+            {bullets.map((b) => (
+              <div
+                key={b}
+                className="flex gap-3 items-start p-3 rounded-lg border border-primary/20 bg-primary/10 text-[15px] text-foreground/90"
+              >
                 <span className="w-5 h-5 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center mt-0.5 shrink-0">
                   <Check className="w-3 h-3" color="white" strokeWidth={3} />
                 </span>
                 <span>{b}</span>
               </div>
-            )}
+            ))}
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 items-center">
-            <a href="#get-terms" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors">Request Rental Loan Terms →
-
+            <a
+              href="#get-terms"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+            >
+              See If You Qualify
+              <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#why-this" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-dashed border-muted-foreground/30 pb-0.5">
-              See If Your Property Qualifies
+            <a
+              href="#what-is-dscr"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-dashed border-muted-foreground/30 pb-0.5"
+            >
+              Learn How DSCR Works
             </a>
           </div>
 
-          <p className="mt-5 text-xs text-muted-foreground/60">Transparent terms. No hype. Built for long-term rental portfolio builders.
-
+          <p className="mt-5 text-xs text-muted-foreground/60">
+            For investment properties only. Not a commitment to lend. NMLS licensed in Missouri.
           </p>
         </div>
 
-        {/* Right — Form */}
+        {/* Right: Form */}
         <div className="glass p-8">
           {submitted ? (
             <div className="flex flex-col items-center justify-center text-center py-12">
               <CheckCircle className="w-12 h-12 text-primary mb-4" />
-              <h2 className="text-2xl font-bold text-white">Request Received</h2>
+              <h2 className="font-heading text-2xl font-bold text-white">Pre-Qualification Received</h2>
               <p className="mt-3 text-sm text-muted-foreground max-w-sm">
-                We'll review your details and follow up with clear terms and qualification guidance shortly.
+                We'll review your property details and follow up with your rate range and qualification tier shortly.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
                 className="mt-6 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
-                Submit another request
+                Submit another property
               </button>
             </div>
           ) : (
             <>
-              <h2 className="text-2xl font-bold">Get Rental Loan Terms</h2>
+              <h2 className="font-heading text-2xl font-bold">Get Your DSCR Pre-Qualification</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Takes less than 3 minutes. We'll follow up with clear terms and qualification guidance.
+                Takes 3 minutes. We'll follow up with your rate range and qualification tier.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
-                {[
-                { label: "Name", key: "name", type: "text", placeholder: "Full name" },
-                { label: "Email", key: "email", type: "email", placeholder: "you@email.com" },
-                { label: "Phone", key: "phone", type: "tel", placeholder: "(555) 555-5555" },
-                { label: "Property Address", key: "address", type: "text", placeholder: "123 Main St, City, State" },
-                { label: "Estimated Monthly Rent", key: "rent", type: "text", placeholder: "$2,500" },
-                { label: "Entity Name (optional)", key: "entity", type: "text", placeholder: "Your LLC" }].
-                map((f) =>
-                <div key={f.key} className="grid gap-1.5">
+                {formFields.map((f) => (
+                  <div key={f.key} className="grid gap-1.5">
                     <label className="text-xs font-medium text-muted-foreground">{f.label}</label>
                     <input
-                    type={f.type}
-                    placeholder={f.placeholder}
-                    required={f.key !== "entity"}
-                    value={formData[f.key as keyof typeof formData]}
-                    onChange={(e) => setFormData((p) => ({ ...p, [f.key]: e.target.value }))}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-muted text-foreground text-sm outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted-foreground/60" />
-
+                      type={f.type}
+                      placeholder={f.placeholder}
+                      required={f.key !== "entity"}
+                      value={formData[f.key as keyof typeof formData]}
+                      onChange={(e) => setFormData((p) => ({ ...p, [f.key]: e.target.value }))}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-muted text-foreground text-sm outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-muted-foreground/60"
+                    />
                   </div>
-                )}
+                ))}
 
                 <label className="flex items-start gap-3 cursor-pointer mt-1">
                   <input
@@ -195,9 +191,9 @@ const HeroSection = () => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors disabled:opacity-50">
-
-                  {submitting ? "Sending…" : "Request Rental Loan Terms →"}
+                  className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
+                >
+                  {submitting ? "Sending..." : "Get My DSCR Rate"}
                 </button>
 
                 {errorMsg && (
@@ -208,8 +204,8 @@ const HeroSection = () => {
           )}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default HeroSection;

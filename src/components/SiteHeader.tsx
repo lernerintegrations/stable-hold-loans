@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+import logo from "@/assets/RentRefi_Logo_Primary.svg";
+
 const SiteHeader = () => {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container flex items-center justify-between py-4">
-        <a href="#" className="flex items-center gap-1 font-bold tracking-tight text-lg">
-          <span className="font-extrabold text-foreground text-xl">RENT</span>
-          <span className="font-medium text-primary text-xl">Refi</span>
-        </a>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="RentRefi" className="h-9 w-auto" />
+        </Link>
 
         <nav className="hidden md:flex items-center gap-1 text-sm text-muted-foreground">
           {["Why This", "How It Works", "Benefits", "FAQ"].map((item) => (

@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
       <div className="bg-scene" />
       <SiteHeader />
       <main className="mx-auto max-w-[800px] px-6 py-24 text-[#E8EAF2]">
-        <h1 className="mb-2 text-4xl font-bold text-white">Privacy Policy</h1>
+        <h1 className="font-heading mb-2 text-4xl font-bold text-white">Privacy Policy</h1>
         <p className="mb-12 text-[#6B7594]">Last Updated: March 26, 2026</p>
 
         <p className="mb-8 leading-relaxed">

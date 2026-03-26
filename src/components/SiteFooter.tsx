@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Mail, Phone, Clock } from "lucide-react";
+import { Instagram, Facebook, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const socials = [
@@ -19,24 +19,28 @@ const SiteFooter = () => {
 
             <p className="text-xs text-muted-foreground/70 mb-1">RENTREFI, LLC</p>
             <p className="text-sm text-muted-foreground max-w-md">
-              30-Year Fixed Rental Loans, built for investors. Designed to scale.
+              DSCR rental loans, simplified.
             </p>
-            <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">Not for owner-occupied homes. Terms and eligibility vary. 
-
-Loans are for investment purposes only and not for personal, family, or household use. Loan product availability may be limited in certain states. This is not a commitment to lend. All loans are subject to borrower underwriting and credit approval, in RentRefi's sole and absolute discretion.
-
-
+            <p className="mt-3 text-xs text-muted-foreground/60 max-w-md leading-relaxed">
+              Not for owner-occupied homes. Terms and eligibility vary.
+              Loans are for investment purposes only and not for personal, family, or household use.
+              Loan product availability may be limited in certain states.
+              This is not a commitment to lend.
+              All loans are subject to borrower underwriting and credit approval, in RentRefi's sole and absolute discretion.
             </p>
           </div>
 
           <div>
             <div className="flex flex-wrap gap-2.5 text-[13px] text-muted-foreground">
-              {["Get Terms", "How It Works", "FAQ", "Benefits"].map((l) => <a key={l} href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
-              className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors">
-
+              {["Get Terms", "How It Works", "FAQ"].map((l) => (
+                <a
+                  key={l}
+                  href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="px-3 py-2 rounded-lg bg-muted/50 border border-border hover:bg-muted hover:text-foreground transition-colors"
+                >
                   {l}
                 </a>
-              )}
+              ))}
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/70">
               <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
@@ -45,7 +49,7 @@ Loans are for investment purposes only and not for personal, family, or househol
             </div>
             <div className="mt-3 flex items-center gap-4">
               <p className="text-xs text-muted-foreground/50">
-                © {new Date().getFullYear()} RENTREFI, LLC. All rights reserved.
+                &copy; {new Date().getFullYear()} RENTREFI, LLC. All rights reserved.
               </p>
               <div className="flex gap-2">
                 {socials.map(({ icon: Icon, href, label }) => (
@@ -69,7 +73,7 @@ Loans are for investment purposes only and not for personal, family, or househol
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Clock size={15} className="text-primary shrink-0" />
-                <span>Mon–Fri: 9am – 5pm CST</span>
+                <span>Mon-Fri: 9am - 5pm CST</span>
               </li>
               <li>
                 <a href="mailto:info@rentrefi.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
@@ -77,18 +81,12 @@ Loans are for investment purposes only and not for personal, family, or househol
                   <span>info@rentrefi.com</span>
                 </a>
               </li>
-              <li>
-                <a href="tel:1234567890" className="flex items-center gap-2 hover:text-foreground transition-colors">
-                  <Phone size={15} className="text-primary shrink-0" />
-                  <span>123.456.7890</span>
-                </a>
-              </li>
             </ul>
           </div>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 };
 
 export default SiteFooter;

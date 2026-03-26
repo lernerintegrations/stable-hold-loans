@@ -1,24 +1,20 @@
 import { useEffect } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import SEOHead from "@/components/SEOHead";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Privacy Policy | RentRefi";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "RentRefi privacy policy. Learn how RENTREFI, LLC collects, uses, and protects your personal information and SMS communications data.");
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = "RentRefi privacy policy. Learn how RENTREFI, LLC collects, uses, and protects your personal information and SMS communications data.";
-      document.head.appendChild(newMeta);
-    }
   }, []);
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Privacy Policy | RentRefi"
+        description="RentRefi privacy policy. Learn how RENTREFI, LLC collects, uses, and protects your personal information and SMS communications data."
+        url="https://rentrefi.com/privacy-policy"
+      />
       <div className="bg-scene" />
       <SiteHeader />
       <main className="mx-auto max-w-[800px] px-6 py-24 text-[#E8EAF2]">

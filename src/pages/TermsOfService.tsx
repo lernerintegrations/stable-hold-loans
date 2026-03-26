@@ -1,24 +1,20 @@
 import { useEffect } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import SEOHead from "@/components/SEOHead";
 
 const TermsOfService = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Terms of Service | RentRefi";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "RentRefi terms of service. Review the terms governing your use of rentrefi.com and DSCR lending services provided by RENTREFI, LLC.");
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = "RentRefi terms of service. Review the terms governing your use of rentrefi.com and DSCR lending services provided by RENTREFI, LLC.";
-      document.head.appendChild(newMeta);
-    }
   }, []);
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Terms of Service | RentRefi"
+        description="RentRefi terms of service. Review the terms governing your use of rentrefi.com and DSCR lending services provided by RENTREFI, LLC."
+        url="https://rentrefi.com/terms-of-service"
+      />
       <div className="bg-scene" />
       <SiteHeader />
       <main className="mx-auto max-w-[800px] px-6 py-24 text-[#E8EAF2]">

@@ -12,6 +12,8 @@ const stlouis = [
   { label: "Cap rates", value: "5.0 to 7.6%", note: null },
 ];
 
+import { Link } from "react-router-dom";
+
 const MissouriSection = () => {
   return (
     <section className="container py-20">
@@ -40,9 +42,12 @@ const MissouriSection = () => {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-sm font-medium text-primary">
-            Zero DSCR lenders have a Columbia-specific page. We're local.
-          </p>
+          <Link
+            to="/dscr-loans/columbia-mo"
+            className="mt-5 inline-block text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            View Columbia DSCR Loans &rarr;
+          </Link>
         </div>
 
         {/* St. Louis */}
